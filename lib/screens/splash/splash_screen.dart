@@ -14,9 +14,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    if (SharedPrefs().authToken.isNotEmpty) {
+    if (SharedPrefs().isLogin) {
       Future.delayed(const Duration(seconds: 1), () {
-        Navigator.popAndPushNamed(context, AppRoutes.home);
+        Navigator.popAndPushNamed(context, AppRoutes.navigationBar);
       });
     } else {
       Future.delayed(const Duration(seconds: 1), () {

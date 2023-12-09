@@ -1,11 +1,7 @@
-import 'dart:convert';
-
-import 'package:fello/models/login/user_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefConsts {
-  static const String authToken = 'authToken';
-  static const String userData = 'userData';
+  static const String isLogin = "isLogin";
 }
 
 class SharedPrefs {
@@ -21,20 +17,7 @@ class SharedPrefs {
 
   Future<void> clear() async => await _prefs.clear();
 
-  String get authToken => _prefs.getString(PrefConsts.authToken) ?? "";
+  bool get isLogin => _prefs.getBool(PrefConsts.isLogin) ?? false;
 
-  set authToken(String value) => _prefs.setString(PrefConsts.authToken, value);
-
-  UserDataModel get userData {
-    try {
-      return UserDataModel.fromJson(
-          jsonDecode(_prefs.getString(PrefConsts.userData) ?? ""));
-    } catch (e) {
-      return UserDataModel();
-    }
-  }
-
-  set userData(UserDataModel value) {
-    _prefs.setString(PrefConsts.userData, jsonEncode(value.toJson()));
-  }
+  set isLogin(bool value) => _prefs.setBool(PrefConsts.isLogin, value);
 }
