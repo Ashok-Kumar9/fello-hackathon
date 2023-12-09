@@ -39,7 +39,7 @@ class _NavbarScreenState extends State<NavbarScreen>
     FontAwesomeIcons.solidUser
   ];
 
-  int _currentIndex = 0;
+  int _currentIndex = 2;
   final List<int> _indexList = [];
 
   @override
@@ -48,13 +48,7 @@ class _NavbarScreenState extends State<NavbarScreen>
   }
 
   void saveIndex(index) async {
-    if (index == 2) {
-      return;
-    }
 
-    if (index == 1) {
-      return;
-    }
 
     if (!_indexList.contains(_currentIndex)) {
       _indexList.add(_currentIndex);
@@ -104,7 +98,7 @@ class _NavbarScreenState extends State<NavbarScreen>
             children: [
               CustomNavigationBar(
                 iconSize: 20.0,
-                selectedColor: Colors.white,
+                selectedColor: Colors.green,
                 strokeColor: Colors.white,
                 unSelectedColor: Colors.white,
                 borderRadius: const Radius.circular(18.0),
@@ -130,14 +124,18 @@ class _NavbarScreenState extends State<NavbarScreen>
                     ),
                   ),
                 ),
-                currentIndex: 1,
+                currentIndex: _currentIndex,
                 onTap: (index) => saveIndex(index),
                 isFloating: true,
               ),
               Positioned(
                 bottom: 26.0,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    setState(() {
+                      _currentIndex = 2;
+                    });
+                  },
                   child: ClipRRect(
                     borderRadius:
                         const BorderRadius.all(Radius.circular(100.0)),

@@ -8,6 +8,9 @@ class AppImages {
   static const String carousel_2 = 'assets/images/carousel/carousel_2.png';
   static const String carousel_3 = 'assets/images/carousel/carousel_3.png';
 
+  // product
+  static const String product_1 = 'assets/images/product/product_1.svg';
+
   static const String full = 'assets/images/full.svg';
 }
 

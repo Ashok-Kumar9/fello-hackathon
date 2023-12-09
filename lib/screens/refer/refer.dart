@@ -10,6 +10,12 @@ class ReferScreen extends StatefulWidget {
 class _ReferScreenState extends State<ReferScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return
+    Scaffold(
+      body: Center(
+        child: Text('Refer Screen'),
+      ),
+
+    );
   }
 }
