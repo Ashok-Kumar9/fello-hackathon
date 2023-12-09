@@ -1,4 +1,5 @@
 import 'package:fello/Routes/routes.dart';
+import 'package:fello/bloc/Explore/add_goal_cubit.dart';
 import 'package:fello/bloc/login/login_cubit.dart';
 import 'package:fello/utils/shared_pref/shared_prefs.dart';
 import 'package:fello/utils/size/size.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<LoginCubit>(create: (context) => LoginCubit()),
-
+        BlocProvider<AddGoalCubit>(create: (context) => AddGoalCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,3 +1,4 @@
+import 'package:fello/screens/explore/add_goal.dart';
 import 'package:fello/screens/explore/explore.dart';
 import 'package:fello/screens/home/home.dart';
 import 'package:fello/screens/login/login_screen.dart';
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String track = '/track';
   static const String profile = '/profile';
   static const String refer = '/refer';
+  static const String addGoal = '/addGoal';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -40,8 +42,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case refer:
         return MaterialPageRoute(builder: (_) => const ReferScreen());
-
-
+      case addGoal:
+        return MaterialPageRoute(builder: (_) => const AddGoalScreen());
 
       default:
         return MaterialPageRoute(

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 enum Mode { dev, prod }
 
 const Mode appMode = Mode.dev;
@@ -10,7 +8,6 @@ String getBaseUrl() {
       return 'https://fello.in';
     case Mode.prod:
       return 'https://fello.in';
-
   }
 }
 

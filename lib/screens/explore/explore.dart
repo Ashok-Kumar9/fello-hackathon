@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fello/Routes/routes.dart';
 import 'package:fello/utils/constants/assets.dart';
 import 'package:fello/utils/constants/service_images.dart';
 import 'package:fello/utils/size/size.dart';
@@ -38,113 +39,118 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     .copyWith(color: Colors.grey),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.all(12),
-              padding: const EdgeInsets.only(bottom: 16),
-              height: SizeConfig.height * 0.3,
-              decoration: BoxDecoration(
-                color: Colors.black26,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.black12),
-              ),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: SizeConfig.height * 0.24,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: SizeConfig.height * 0.2,
-                          width: SizeConfig.width,
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: Colors.white10,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Create Your',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineLarge!
-                                    .copyWith(color: Colors.white),
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                'Own Goal',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineLarge!
-                                    .copyWith(color: Colors.white),
-                              ),
-                              const SizedBox(height: 16),
-                              Text(
-                                'Get upto 10% return on your investment',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.addGoal);
+              },
+              child: Container(
+                margin: const EdgeInsets.all(12),
+                padding: const EdgeInsets.only(bottom: 16),
+                height: SizeConfig.height * 0.3,
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black12),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: SizeConfig.height * 0.24,
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: SizeConfig.height * 0.2,
+                            width: SizeConfig.width,
+                            padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
+                              color: Colors.white10,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: CarouselSlider(
-                              options: CarouselOptions(
-                                height: SizeConfig.width * 0.15,
-                                viewportFraction: 0.2,
-                                autoPlay: true,
-                                autoPlayInterval: const Duration(seconds: 3),
-                                autoPlayAnimationDuration:
-                                    const Duration(milliseconds: 800),
-                                autoPlayCurve: Curves.fastOutSlowIn,
-                                pauseAutoPlayOnTouch: true,
-                                aspectRatio: 2.0,
-                                onPageChanged: (index, reason) {
-                                  setState(() {
-                                    // _current = index;
-                                  });
-                                },
-                              ),
-                              items: serviceImages
-                                  .map(
-                                    (item) => Center(
-                                        child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(100),
-                                      child: Image.network(
-                                        item,
-                                        fit: BoxFit.cover,
-                                        width: SizeConfig.width * 0.15,
-                                      ),
-                                    )),
-                                  )
-                                  .toList(),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Create Your',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineLarge!
+                                      .copyWith(color: Colors.white),
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  'Own Goal',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineLarge!
+                                      .copyWith(color: Colors.white),
+                                ),
+                                const SizedBox(height: 16),
+                                Text(
+                                  'Get upto 10% return on your investment',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(color: Colors.grey),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                      ],
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: CarouselSlider(
+                                options: CarouselOptions(
+                                  height: SizeConfig.width * 0.15,
+                                  viewportFraction: 0.2,
+                                  autoPlay: true,
+                                  autoPlayInterval: const Duration(seconds: 3),
+                                  autoPlayAnimationDuration:
+                                      const Duration(milliseconds: 800),
+                                  autoPlayCurve: Curves.fastOutSlowIn,
+                                  pauseAutoPlayOnTouch: true,
+                                  aspectRatio: 2.0,
+                                  onPageChanged: (index, reason) {
+                                    setState(() {
+                                      // _current = index;
+                                    });
+                                  },
+                                ),
+                                items: serviceImages
+                                    .map(
+                                      (item) => Center(
+                                          child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(100),
+                                        child: Image.network(
+                                          item,
+                                          fit: BoxFit.cover,
+                                          width: SizeConfig.width * 0.15,
+                                        ),
+                                      )),
+                                    )
+                                    .toList(),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    'upto 12% contribution from 100+ brands',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(color: Colors.grey),
-                  )
-                ],
+                    const Spacer(),
+                    Text(
+                      'upto 12% contribution from 100+ brands',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(color: Colors.grey),
+                    )
+                  ],
+                ),
               ),
             ),
             const Divider(),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/constants/assets.dart';
+import '../../utils/size/size.dart';
+
 class ReferScreen extends StatefulWidget {
   const ReferScreen({super.key});
 
@@ -12,8 +15,20 @@ class _ReferScreenState extends State<ReferScreen> {
   Widget build(BuildContext context) {
     return
     Scaffold(
-      body: Center(
-        child: Text('Refer Screen'),
+      body:
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset(
+              AppImages.logo,
+              height: SizeConfig.height * 0.1,
+            ),
+          ),
+          const Center(
+            child: Text('Refer Screen'),
+          ),
+        ],
       ),
 
     );
