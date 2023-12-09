@@ -12,4 +12,12 @@ class AddGoalCubit extends Cubit<AddGoalState> {
     emit(state.copyWith(
         status: AddGoalStatus.goalNameAdded, addGoalModel: addGoalModel));
   }
+
+  Future<void> goalAmountAdded(String goalAmount) async {
+    AddGoalModel addGoalModel = AddGoalModel(goalAmount: goalAmount);
+    emit(state.copyWith(
+        status: AddGoalStatus.goalAmountAdded, addGoalModel: addGoalModel));
+  }
+
+
 }

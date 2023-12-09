@@ -1,6 +1,6 @@
 part of 'add_goal_cubit.dart';
 
-enum AddGoalStatus { initial, goalNameAdded, failure }
+enum AddGoalStatus { initial, goalNameAdded, goalAmountAdded, failure }
 
 class AddGoalState extends Equatable {
   final AddGoalStatus status;
