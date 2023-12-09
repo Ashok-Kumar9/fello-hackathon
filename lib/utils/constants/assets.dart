@@ -10,6 +10,7 @@ class AppImages {
 
   // product
   static const String product_1 = 'assets/images/product/product_1.svg';
+  static const String product_2 = 'assets/images/product/product_2.svg';
 
   static const String full = 'assets/images/full.svg';
 }
