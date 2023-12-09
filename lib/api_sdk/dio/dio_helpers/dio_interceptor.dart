@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:fello/utils/shared_pref/shared_prefs.dart';
 
 import 'dio_exceptions.dart';
 
@@ -7,9 +6,6 @@ class DioInterceptor extends Interceptor {
   @override
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    String token = SharedPrefs().authToken;
-    options.headers['Authorization'] = 'Bearer $token';
-
     super.onRequest(options, handler);
   }
 

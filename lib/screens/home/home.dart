@@ -1,11 +1,7 @@
-import 'package:fello/Routes/routes.dart';
 import 'package:fello/utils/constants/assets.dart';
 import 'package:fello/utils/constants/color.dart';
-import 'package:fello/utils/size/size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../utils/reusable/reusable_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(33, 37, 41, 1),
       appBar: AppBar(
         title: const Text('Fello'),
       ),
@@ -63,14 +60,13 @@ class HomeScreen extends StatelessWidget {
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 16,
               ),
-              children: [
-                ReusableWidgets.selectionContainer(
-                  context: context,
-                  onTap: () => Navigator.pushNamed(context, AppRoutes.home),
-                  title: "Reports",
-                  iconAssetName: AppImages.full,
-                ),
-
+              children: const [
+                // ReusableWidgets.selectionContainer(
+                //   context: context,
+                //   onTap: () => Navigator.pushNamed(context, AppRoutes.home),
+                //   title: "Reports",
+                //   iconAssetName: AppImages.full,
+                // ),
               ],
             ),
             const SizedBox(height: 8.0),

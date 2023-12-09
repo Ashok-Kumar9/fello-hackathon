@@ -1,17 +1,15 @@
-import 'package:fello/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 
-class ThemeAppBar{
+class ThemeAppBar {
   ThemeAppBar._();
 
   static AppBarTheme lightAppBarTheme = const AppBarTheme(
     elevation: 0,
-    backgroundColor: AppColors.lightShade4,
-
+    backgroundColor: Color.fromRGBO(33, 37, 41, 1),
   );
 
   static AppBarTheme darkAppBarTheme = const AppBarTheme(
     elevation: 0,
-    backgroundColor: AppColors.darkShade4,
+    backgroundColor: Color.fromRGBO(33, 37, 41, 1),
   );
 }
