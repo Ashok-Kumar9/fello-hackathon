@@ -46,22 +46,15 @@ class ReusableWidgets {
     return RichText(
       text: TextSpan(
         text: title,
-        style:  Theme.of(context).textTheme.bodySmall,
+        style: Theme.of(context).textTheme.bodySmall,
         children: [
           TextSpan(
-            text: value,
-            style:  Theme.of(context).textTheme.bodyMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-            )
-          ),
+              text: value,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                  )),
         ],
       ),
     );
-
-
-
   }
-
-
-
 }
