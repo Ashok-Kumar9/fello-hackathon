@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:fello/repository/login/login_repo.dart';
+import 'package:fello/utils/shared_pref/shared_prefs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'login_state.dart';
@@ -23,6 +24,7 @@ class LoginCubit extends Cubit<LoginState> {
     bool isOtpSent =
         await LoginRepository().verifyOtp(mobileNumber: mobileNumber);
     if (isOtpSent) {
+      SharedPrefs().isLogin = true;
       emit(state.copyWith(status: LoginStatus.success));
     } else {
       emit(state.copyWith(

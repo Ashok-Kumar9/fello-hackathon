@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fello/Routes/routes.dart';
 import 'package:fello/bloc/login/login_cubit.dart';
 import 'package:fello/utils/common_fun/common_fun.dart';
 import 'package:fello/utils/components/animation_dialog.dart';
@@ -27,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen>
     _animationController = AnimationController(vsync: this)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          Navigator.pushReplacementNamed(context, '/home');
+          Navigator.pushReplacementNamed(context, AppRoutes.navigationBar);
         }
       });
     WidgetsBinding.instance.addObserver(this);

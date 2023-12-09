@@ -25,7 +25,7 @@ class LoginRepository {
       //   },
       // );
 
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       return true;
     } catch (e) {
       return false;
