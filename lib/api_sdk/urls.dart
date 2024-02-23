@@ -5,20 +5,20 @@ const Mode appMode = Mode.dev;
 String getBaseUrl() {
   switch (appMode) {
     case Mode.dev:
-      return 'https://fello.in';
+      return 'https://dummyjson.com/products/';
     case Mode.prod:
       return 'https://fello.in';
   }
 }
 
 enum EndPoints {
-  login,
+  products,
   ;
 
   static String getEndpoint(EndPoints endpoint) {
     switch (endpoint) {
-      case EndPoints.login:
-        return '/login/';
+      case EndPoints.products:
+        return '/products/';
     }
   }
 }

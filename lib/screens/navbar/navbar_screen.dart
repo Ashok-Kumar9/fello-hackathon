@@ -107,11 +107,8 @@ class _NavbarScreenState extends State<NavbarScreen>
                   end: Alignment.bottomRight,
                   colors: [
                     Color.fromRGBO(33, 87, 97, 1),
-                    // Darker shade of the first color
                     Color.fromRGBO(27, 77, 118, 1),
-                    // Darker shade of the second color
                     Color.fromRGBO(29, 49, 98, 1),
-                    // Darker shade of the third color
                   ],
                 ),
                 blurEffect: true,

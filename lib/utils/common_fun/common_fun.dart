@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class CommonFunctions {
@@ -9,5 +8,4 @@ class CommonFunctions {
         gravity: ToastGravity.BOTTOM,
         fontSize: 16.0);
   }
-
 }
